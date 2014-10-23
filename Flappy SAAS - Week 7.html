@@ -1,0 +1,127 @@
+<!DOCTYPE html>  
+<html>
+
+<head>  
+
+    <title>Flappy SAAS</title>
+
+    <script type="text/javascript" src="phaser.js"></script>
+    <script type="text/javascript">
+		var game = new Phaser.Game(800, 800, Phaser.AUTO, 'gameDiv');
+		var mainState = {
+
+		    preload: function() { 
+		        game.load.image('bg', 'images/bg.jpg')
+		        game.stage.backgroundColor = '#3B3B3B';
+		        game.load.image('S', 'images/S.png'); 
+		        game.load.audio('ding', 'images/');
+		        game.load.image('lower', 'images/pipeLower.png');
+		        game.load.image('upper', 'images/pipeUpper.png');
+		        game.load.image('point', 'images/pointbox.png');
+		    },
+
+		    create: function() { 
+		    	game.physics.startSystem(Phaser.Physics.ARCADE);
+		    	background = game.add.tileSprite(0, 0, 800, 800, 'bg');
+		    	this.S = this.game.add.sprite(300, 30, 'S');
+		    	game.physics.arcade.enable(this.S);
+    			this.S.body.gravity.y = 1000;
+    			var spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+    			spaceKey.onDown.add(this.jump, this);
+    			this.pipesLower = game.add.group();
+				this.pipesLower.enableBody = true;
+				this.pipesLower.createMultiple(20, 'lower');
+				this.pipesUpper = game.add.group();
+				this.pipesUpper.enableBody = true;
+				this.pipesUpper.createMultiple(20, 'upper');
+				this.points = game.add.group();
+				this.points.enableBody = true;
+				this.points.createMultiple(20, 'point');
+				
+				this.timer = game.time.events.loop(2000, this.addPipes, this);
+				this.timer = game.time.events.loop(2000, this.updatePoints, this);
+				this.score = 0;  
+				this.scoreDisplay = game.add.text(400, 20, "0", { font: "60px Arial", fill: "#ffffff" });
+    				        
+		    },
+
+		    update: function() {
+
+		    	if (this.S.inWorld == false)
+        		this.restart();
+        		game.physics.arcade.overlap(this.S, this.pipesLower, this.restart, null, this); 
+        		game.physics.arcade.overlap(this.S, this.pipesUpper, this.restart, null, this); 
+        		//game.physics.arcade.overlap(this.S, this.points, this.updatePoints, null, this);   
+		       
+		    },
+
+
+		    jump: function() {  
+			    
+			    this.S.body.velocity.y = -380;
+			},
+		
+			addUpperPipe: function(x, y) {  
+
+			    var pipeUpper = this.pipesUpper.getFirstDead();
+			    pipeUpper.reset(x, y);
+			    pipeUpper.body.velocity.x = -200; 
+			    pipeUpper.checkWorldBounds = true;
+			    pipeUpper.outOfBoundsKill = true;
+			    var point = this.points.getFirstDead();
+			    point.reset(x, y);
+			    point.body.velocity.x = -200; 
+			    point.checkWorldBounds = true;
+			    point.outOfBoundsKill = true;
+			},
+
+			addLowerPipe: function(x, y) {  
+
+			    var pipeLower = this.pipesLower.getFirstDead();
+			    pipeLower.reset(x, y);
+			    pipeLower.body.velocity.x = -200; 
+			    pipeLower.checkWorldBounds = true;
+			    pipeLower.outOfBoundsKill = true;
+
+			},
+
+			addPipes: function() {  
+		    var hole = Math.floor(Math.random() * -400) - 10;
+		    this.addUpperPipe(800, hole);
+		    this.addLowerPipe(800, hole+760);
+
+			},
+
+			
+
+			
+			restart: function() {  
+			   
+			    game.state.start('main');
+			},
+
+			updatePoints: function() {  
+			   
+			    this.score += 1;
+			    this.scoreDisplay.text = this.score-1;
+			    
+
+			},
+
+
+			
+		};
+
+		game.state.add('main', mainState);  
+		game.state.start('main');  
+
+    </script>
+</head>
+
+<body>
+
+    <center><p> Press the spacebar to jump </p></center>
+    <center><div id="gameDiv"> </div></center>
+
+</body>  
+</html>
