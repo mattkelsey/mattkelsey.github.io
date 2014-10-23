@@ -3,10 +3,22 @@
 
 <head>  
 
+
+	<style>
+		body {
+		    background-color: linen;
+		}
+		h1 {
+		    color: maroon;
+		    font-family: "Trebuchet MS", Helvetica, sans-serif;
+		} 
+	</style>
     <title>Flappy SAAS</title>
 
     <script type="text/javascript" src="phaser.js"></script>
     <script type="text/javascript">
+    	/*SAAS Coding Challenge Week 7, by Matt Kelsey*/
+
 		var game = new Phaser.Game(800, 800, Phaser.AUTO, 'gameDiv');
 		var mainState = {
 
@@ -14,7 +26,6 @@
 		        game.load.image('bg', 'images/bg.jpg')
 		        game.stage.backgroundColor = '#3B3B3B';
 		        game.load.image('S', 'images/S.png'); 
-		        game.load.audio('ding', 'images/');
 		        game.load.image('lower', 'images/pipeLower.png');
 		        game.load.image('upper', 'images/pipeUpper.png');
 		        game.load.image('point', 'images/pointbox.png');
@@ -23,7 +34,7 @@
 		    create: function() { 
 		    	game.physics.startSystem(Phaser.Physics.ARCADE);
 		    	background = game.add.tileSprite(0, 0, 800, 800, 'bg');
-		    	this.S = this.game.add.sprite(300, 30, 'S');
+		    	this.S = this.game.add.sprite(300, 300, 'S');
 		    	game.physics.arcade.enable(this.S);
     			this.S.body.gravity.y = 1000;
     			var spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -98,6 +109,8 @@
 			restart: function() {  
 			   
 			    game.state.start('main');
+
+
 			},
 
 			updatePoints: function() {  
@@ -112,6 +125,8 @@
 			
 		};
 
+		
+
 		game.state.add('main', mainState);  
 		game.state.start('main');  
 
@@ -120,7 +135,7 @@
 
 <body>
 
-    <center><p> Press the spacebar to jump </p></center>
+    <center><h1> Press the spacebar to jump </h1></center>
     <center><div id="gameDiv"> </div></center>
 
 </body>  
