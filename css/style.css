@@ -23,7 +23,7 @@ a {
 
 .image {
   width: 40%;
-  height: auto;
+  height: 40%;
 }
 
 .icon {
@@ -65,7 +65,7 @@ a {
 }
 
 .box {
-    width: 400px;
+    width: 500px;
     height: 40%;
     text-align: center;
     background-position: center center;
