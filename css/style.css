@@ -35,8 +35,8 @@ a {
   text-align: center;
 }
 
-.title-container {
-    flex-direction: column;
+.flex-column {
+  flex-direction: column;
 }
 
 .title {
