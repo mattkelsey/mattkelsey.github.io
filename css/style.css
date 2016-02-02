@@ -26,10 +26,6 @@ a {
   height: auto;
 }
 
-.icon {
-  width: 10%;
-}
-
 .flex-center {
   justify-content: center;
   text-align: center;
@@ -47,7 +43,7 @@ a {
 
 .subtitle {
     color: #3b3a36;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 .body-text {
