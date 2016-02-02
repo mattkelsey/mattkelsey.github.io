@@ -29,8 +29,9 @@
         but it has gone on a lot longer than I originally thought (as projects tend
         to do).
       </p>
-      <div class="flex flex-center">
+      <div class="flex flex-center flex-column">
         <img class="image" src="img/parts.jpg" />
+        <span class="image-subtitle">The original set of parts.</span>
       </div>
       <p class="project-body-text">
         It has still not been completed, although the first iteration is done and I am
@@ -43,17 +44,35 @@
         the wrist.
       </p>
       <p class="project-body-text">
-        It has still not been completed, although the first iteration is done and I am
-        taking a break from it so that I can spend more time on other projects.
-        Ultimately it came down to the fact that the hardware available to
-        consumers for making things like this just isn't small enough to create
-        a piece of wearble tech that could confortably fit on a wrist. I was able to make a
-        device that functionally read notifications from my phone and display the
-        time, but it is about 14mm thick, much to large to be confortable worn on
-        the wrist.
+        I did throughout the process make some changes in an attempt at making the device
+        more compact. The first of these was to swap the Arduino Pro Min for and Adafruit
+        Pro Trinket. The advantage here was that I no longer had to deal with using an
+        FTDI controller for interfacing with the device. This also made charging much more
+        convienent with the advent of a small LiPo battery. Adafruit sells a great charge
+        control board that fits perfectly with the Trinket.
+      </p>
+      <div class="flex flex-center flex-column">
+        <img class="image" src="img/trinket.jpg" />
+        <span class="image-subtitle">The new Adafruit Trinket sandwiched between the other parts.</span>
+      </div>
+      <p class="project-body-text">
+        Also, another issue I have yet to resolve is how to control the watch. I am
+        attempting to make the interface as minimal as possible. This means there is very
+        little need for an sort of hardware buttons. Unfortunately, I do still need a way
+        to turn the device on and off. And because serial communication is used to both
+        upload code to the Trinket and trasmit data through the Bluetooth module, I need
+        to be able to turn the BT module off when uploading code. Thus I have two large switches
+        tethered to the device still (one is almost as large as all the other parts combined).
+        This is an incredibly simple fix, I simply need to buy a small dip switch for both
+        controls, but I haven't gotten around to it, mainly due to a scarcity of parts (those
+        switches were the only two I had on hand).
       </p>
       <p class="project-body-text">
         Moving forward I would like to CAD a custom PCB and have it manufactured
+        for me as I do not have the tools available to make something on such a
+        small scale. This would allow for all of the hardware function without
+        extraneous bits (for instance I have no need for most of the functionallity
+        on the Trinket, I could instead simply use the ATmega328 on its own).
       </p>
   </div>
 

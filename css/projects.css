@@ -1,6 +1,6 @@
 .project-header {
   padding: 5%;
-  background-color: #e9ece5;
+  background-color: #b3c2bf;
   margin-bottom: 5%;
   color: #3b3a36;
 }
@@ -10,13 +10,22 @@
   color: #3b3a36;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
+.image-subtitle {
+  color: #b3c2bf;
+  font-size: 1em;
+  font-style: italic;
+}
+
 body {
   background-color: #3b3a36;
-  color: #b3c2bf;
+  color: #e9ece5;
 }
 
 .project-body-text {
-  color: #b3c2bf;
   font-size: 1.3em;
 }
 
