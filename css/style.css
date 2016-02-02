@@ -1,21 +1,38 @@
 body {
     font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
     margin: 0px;
-    background-color: #e9ece5; 
+    background-color: #e9ece5;
+    padding-bottom: 30px;
 }
 
 span {
     font-size: 5vh;
 }
 
+a {
+  color: inherit;
+}
+
 .flex {
     position: relative;
     width: 100%;
-    text-align: center;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+}
+
+.image {
+  width: 40%;
+  height: auto;
+}
+
+.icon {
+  width: 10%;
+}
+
+.flex-center {
+  justify-content: center;
+  text-align: center;
 }
 
 .title-container {
@@ -48,15 +65,15 @@ span {
 }
 
 .box {
-    width: 25%;
-    min-width: 20px;
-    height: 25%;
+    width: 400px;
+    height: 40%;
     text-align: center;
     background-position: center center;
     background-size: cover;
-    display: inherit;
+    display: flex;
     align-items: center;
     justify-content: center;
+    flex-grow: 1;
 }
 
 .fade {

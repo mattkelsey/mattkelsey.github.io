@@ -1,0 +1,26 @@
+.project-header {
+  padding: 5%;
+  background-color: #e9ece5;
+  margin-bottom: 5%;
+  color: #3b3a36;
+}
+
+.project-subtitle {
+  font-size: 1.5em;
+  color: #3b3a36;
+}
+
+body {
+  background-color: #3b3a36;
+  color: #b3c2bf;
+}
+
+.project-body-text {
+  color: #b3c2bf;
+  font-size: 1.3em;
+}
+
+.project-body {
+  margin-left: 15%;
+  margin-right: 15%;
+}
