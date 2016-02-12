@@ -22,8 +22,8 @@ a {
 }
 
 .image {
-  width: 40%;
-  height: auto;
+    width: auto;
+  height: 40%;
 }
 
 .flex-center {
