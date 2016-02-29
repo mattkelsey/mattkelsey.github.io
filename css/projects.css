@@ -1,31 +1,49 @@
 .project-header {
-  padding: 5%;
-  background-color: #b3c2bf;
-  margin-bottom: 5%;
-  color: #3b3a36;
+    padding: 2%;
+    background-color: #b3c2bf;
+    margin-bottom: 5%;
+    color: #3b3a36;
 }
 
 .project-subtitle {
-  font-size: 1.5em;
-  color: #3b3a36;
+    font-size: 1.5em; 
+    color: #3b3a36;
 }
 
 .image-subtitle {
-  color: #b3c2bf;
-  font-size: 1.2em;
-  font-style: italic;
+    color: #b3c2bf;
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 30px;
 }
 
 body {
-  background-color: #3b3a36;
-  color: #e9ece5;
+    background-color: #3b3a36;
+    color: #e9ece5;
 }
 
 .project-body-text {
-  font-size: 1.3em;
+    font-size: 1.3em;
 }
 
-.project-body {
-  margin-left: 10%;
-  margin-right: 10%;
+@media (min-width: 1200px) {
+    .project-body {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .project-header {
+        padding-left: 14%;
+        padding-right: 14%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .project-body {
+        margin-left: 27%;
+        margin-right: 27%
+    }
+    .project-header {
+        padding-left: 27%;
+        padding-right: 27%;
+    }
 }
