@@ -21,6 +21,10 @@ a {
     flex-wrap: wrap;
 }
 
+.project-container {
+    height: 100%;
+}
+
 .image {
     width: 80%;
     height: auto;
@@ -63,7 +67,7 @@ a {
 
 .box {
     width: 500px;
-    height: 40%;
+    height: 50%;
     text-align: center;
     background-position: center center;
     background-size: cover;
