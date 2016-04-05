@@ -11,8 +11,17 @@ function init() {
     renderer = new THREE.WebGLRenderer({
         antialias:true
     });
-    renderer.setSize(width, height);
+
+    //forNonStereo
+    //renderer.setSize(width, height);
+    //
+
     document.body.appendChild(renderer.domElement);
+
+    //Stereo
+    effect = new THREE.StereoEffect(renderer);
+		effect.setSize(width, height);
+    //
 
     // create camera and position in the scene
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 20000);
@@ -24,13 +33,19 @@ function init() {
     window.addEventListener('resize', function() {
         var width = window.innerWidth,
             height = window.innerHeight;
-        renderer.setSize(width, height);
+
+
+        //renderer.setSize(width, height);
+
+        effect.setSize(width, height);
+
+
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
     });
     //END CODE FROM THREEJS DOCS
 
-    renderer.setClearColorHex(0x333F47, 1);
+    renderer.setClearColor(0x333F47, 1);
 
     // light source
     var light = new THREE.PointLight(0xffffff);
@@ -88,6 +103,11 @@ function init() {
 function animate() {
     requestAnimationFrame(animate);
     // render scene
-    renderer.render(scene, camera);
+    //renderer.render(scene, camera);
+
+    //Stereo
+    effect.render(scene, camera);
+
+
     controls.update();
 }
