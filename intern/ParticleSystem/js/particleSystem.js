@@ -26,22 +26,15 @@ function init() {
     camera.position.set(500,500,500);
     scene.add(camera);
 
-    //CODE FROM THREEJS DOCS
     // Create an event listener that resizes the renderer with the browser window.
     window.addEventListener('resize', function() {
         var width = window.innerWidth,
             height = window.innerHeight;
-
-
         renderer.setSize(width, height);
-
         effect.setSize(width, height);
-
-
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
     });
-    //END CODE FROM THREEJS DOCS
 
     renderer.setClearColor(0x333F47, 1);
 
