@@ -12,16 +12,14 @@ function init() {
         antialias:true
     });
 
-    //forNonStereo
-    //renderer.setSize(width, height);
-    //
+    //for NonStereo
+    renderer.setSize(width, height);
 
     document.body.appendChild(renderer.domElement);
 
     //Stereo
     effect = new THREE.StereoEffect(renderer);
 		effect.setSize(width, height);
-    //
 
     // create camera and position in the scene
     camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 20000);
@@ -35,7 +33,7 @@ function init() {
             height = window.innerHeight;
 
 
-        //renderer.setSize(width, height);
+        renderer.setSize(width, height);
 
         effect.setSize(width, height);
 
@@ -103,7 +101,7 @@ function init() {
 function animate() {
     requestAnimationFrame(animate);
     // render scene
-    //renderer.render(scene, camera);
+     //renderer.render(scene, camera);
 
     //Stereo
     effect.render(scene, camera);
